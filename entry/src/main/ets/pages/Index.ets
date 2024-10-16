@@ -1,8 +1,11 @@
+import { print } from '@kit.BasicServicesKit';
+import { PrintTag } from '@ohos/hypium/src/main/Constant';
+
 @Entry
 @Component
 struct Index {
   @State message: string = 'Hello World';
-
+//第一次提交
   build() {
     RelativeContainer() {
       Text(this.message)
@@ -13,6 +16,8 @@ struct Index {
           center: { anchor: '__container__', align: VerticalAlign.Center },
           middle: { anchor: '__container__', align: HorizontalAlign.Center }
         })
+
+
     }
     .height('100%')
     .width('100%')
