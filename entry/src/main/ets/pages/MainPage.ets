@@ -2,9 +2,12 @@ import { print } from '@kit.BasicServicesKit';
 import { PrintTag } from '@ohos/hypium/src/main/Constant';
 import { CommonConstants } from '../constants/CommonConstants';
 import { TabItem } from '../model/TabItem';
+import { LogUtils } from '../utils/LogUtils';
 import  MainViewModel  from '../viewModel/MainViewModel';
 import { FindPage } from './find/FindPage';
 import { HomePage } from './home/HomePage';
+import { HotPage } from './hot/HotPage';
+import { MinePage } from './mine/MinePage';
 
 /**
  * 首页
@@ -27,6 +30,16 @@ struct Index {
         TabContent(){
           FindPage()
         }.tabBar(this.TabBottom(MainViewModel.tabTitle[1],1))
+
+        TabContent() {
+          HotPage()
+        }
+        .tabBar(this.TabBottom(MainViewModel.tabTitle[2], 2))
+
+        TabContent() {
+          MinePage()
+        }
+        .tabBar(this.TabBottom(MainViewModel.tabTitle[3], 3))
       }.barMode(BarMode.Fixed)
       .barWidth('100%')
       .scrollable(false)
@@ -40,6 +53,15 @@ struct Index {
     .width('100%')
 
   }
+
+  onPageShow() {
+    LogUtils.error("页面可见>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+  }
+
+  onPageHide() {
+    LogUtils.error("页面不可见>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+  }
+
   @Builder
   TabBottom(item:TabItem,index:number){
     Column(){

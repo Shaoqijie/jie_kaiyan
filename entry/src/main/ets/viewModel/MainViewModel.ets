@@ -18,6 +18,18 @@ export class MainViewModel{
       icon_selected:$r('app.media.icon_sel_find'),
       icon_select:$r('app.media.icon_unsel_find')
     },
+    {
+      index: 2,
+      title: "热门",
+      icon_selected: $r('app.media.icon_sel_hot'),
+      icon_select: $r('app.media.icon_unsel_hot')
+    },
+    {
+      index: 3,
+      title: "我的",
+      icon_selected: $r('app.media.icon_sel_mine'),
+      icon_select: $r('app.media.icon_unsel_mine')
+    }
   ]
 }
 

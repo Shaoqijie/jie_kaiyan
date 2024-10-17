@@ -1,20 +1,40 @@
+import { ViewStateConstant } from '../../constants/ViewStateConstant'
+import { CommonSkeleton } from '../../skelton/CommonSkeleton'
+import { CommonTopBar } from '../../views/CommonTopBar'
+import { StateComponent } from '../../views/StateComponent'
+
 @Entry
 @Component
+/**
+ * 首页
+ */
 export struct HomePage {
-  @State message: string = 'Hello World';
+  @State viewState:string = ViewStateConstant.VIEW_STATE_LOADING
+  @State isRefreshing: boolean = false
+  @State showLoading: boolean = false
+
+  loadNet(){
+
+  }
 
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('HomePageHelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
+    Column() {
+      CommonTopBar({title:"首页",backButton:false,alpha:1}).align(Alignment.TopStart)
+      Stack(){
+        StateComponent({
+          viewState: this.viewState,
+          showSkeleton: true,
+          retryCallback: ()=>{
+            this.loadNet()
+          }
+        }){
+
+        }
+      }.layoutWeight(1)
     }
-    .height('100%')
-    .width('100%')
+
+  }
+  @Builder skeletonContent(){
+     CommonSkeleton()
   }
 }
