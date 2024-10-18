@@ -7,7 +7,11 @@ export  struct HomeListItemComponent{
   private swiperController : SwiperController = new SwiperController()
 
   build() {
-
+    if (this.item?.type == "banner"){
+      this.bannerComponent()
+    }else{
+      this.itemComponent()
+    }
   }
   @Builder bannerComponent(){
     Swiper(){

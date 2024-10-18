@@ -1,5 +1,6 @@
 
-const regex = /^(https?:\/\/)img.\.(.*)$/
+
+const regex = /^(https?:\/\/)img\.(.*)$/
 const replacement = "$1ali-img.$2"
 const ImageRegexUtils = (imageUrl:string | undefined)=>{
   if (imageUrl === undefined) return ""
