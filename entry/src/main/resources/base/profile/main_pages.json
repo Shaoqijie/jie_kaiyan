@@ -5,6 +5,9 @@
     "pages/home/HomePage",
     "pages/find/FindPage",
     "pages/hot/HotPage",
-    "pages/mine/MinePage"
+    "pages/mine/MinePage",
+    "pages/find/fous/FocusPage",
+    "pages/find/category/CategoryPage",
+    "pages/find/topic/TopicPage"
   ]
 }

@@ -7,8 +7,7 @@ export  class HomeViewModel extends BaseViewModel{
    * 获取首页列表输出 -axios 客户端请求
    */
   async getHomeList(resultCallback?: ResultCallback<HomeModelIssueListItemList[]>) {
-    await this.httpRequest()
-      .promise(getHomeListAxios())
+    await this.httpRequest(getHomeListAxios())
       .then(result => {
         let items = result.issueList[0].itemList
         let list = items.filter((item) => item.type == 'video')
