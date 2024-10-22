@@ -9,6 +9,8 @@
     "pages/find/fous/FocusPage",
     "pages/find/category/CategoryPage",
     "pages/find/topic/TopicPage",
-    "pages/CommonDetail/DetailPage"
+    "pages/CommonDetail/DetailPage",
+    "pages/hot/rank/RankPage",
+    "pages/hot/CoordinatePage"
   ]
 }
