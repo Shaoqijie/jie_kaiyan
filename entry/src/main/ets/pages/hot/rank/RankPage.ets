@@ -22,8 +22,6 @@ export struct RankPage {
      })
    }
 
-
-
   build() {
     Stack() {
      List({space:10,initialIndex:0}){
